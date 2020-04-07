@@ -1,7 +1,7 @@
 from position import Position
-from housing_act_type import HousingActType
-from where_now import WhereNow
-from state import State
+from enums.housing_act_type import HousingActType
+from enums.where_now import WhereNow
+from enums.state import State
 from clinic_position import ClinicPosition
 
 

@@ -1,22 +1,12 @@
 from animal import Animal
-from animal_card import AnimalCard
 from client import Client
-from clinic import Clinic
 from clinic_position import ClinicPosition
 from employee import Employee
-from housing import Housing
-from housing_act import HousingAct
-from housing_act_type import HousingActType
-from human import Human
-from medical_act import MedicalAct
 from organization import Organization
 from shelter_position import ShelterPosition
-from species import Species
-from state import State
-from position import Position
-from vaccine import Vaccine
+from enums.species import Species
+from enums.state import State
 from veterinarian_position import VeterinarianPosition
-from where_now import WhereNow
 
 
 def main():

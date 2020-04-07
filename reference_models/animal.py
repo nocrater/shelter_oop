@@ -1,4 +1,4 @@
-from where_now import WhereNow
+from enums.where_now import WhereNow
 from animal_card import AnimalCard
 
 

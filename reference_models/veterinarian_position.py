@@ -1,5 +1,5 @@
 from position import Position
-from state import State
+from enums.state import State
 from vaccine import Vaccine
 from medical_act import MedicalAct
 
