@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>main</class>
- <widget class="QMainWindow" name="main">
+ <class>clients</class>
+ <widget class="QMainWindow" name="clients">
   <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
     <width>800</width>
-    <height>378</height>
+    <height>709</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -15,34 +15,6 @@
   </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QVBoxLayout" name="verticalLayout">
-    <item>
-     <layout class="QHBoxLayout" name="horizontalLayout">
-      <property name="topMargin">
-       <number>25</number>
-      </property>
-      <property name="bottomMargin">
-       <number>25</number>
-      </property>
-      <item>
-       <widget class="QLabel" name="main_label">
-        <property name="font">
-         <font>
-          <pointsize>18</pointsize>
-         </font>
-        </property>
-        <property name="text">
-         <string>Choose which table to edit:</string>
-        </property>
-        <property name="alignment">
-         <set>Qt::AlignCenter</set>
-        </property>
-        <property name="wordWrap">
-         <bool>false</bool>
-        </property>
-       </widget>
-      </item>
-     </layout>
-    </item>
     <item>
      <layout class="QHBoxLayout" name="horizontalLayout_2">
       <property name="topMargin">
@@ -52,7 +24,7 @@
        <number>25</number>
       </property>
       <item>
-       <widget class="QPushButton" name="humans_button">
+       <widget class="QPushButton" name="new_button">
         <property name="sizePolicy">
          <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
           <horstretch>0</horstretch>
@@ -65,12 +37,12 @@
          </font>
         </property>
         <property name="text">
-         <string>Humans</string>
+         <string>New</string>
         </property>
        </widget>
       </item>
       <item>
-       <widget class="QPushButton" name="clients_button">
+       <widget class="QPushButton" name="edit_button">
         <property name="sizePolicy">
          <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
           <horstretch>0</horstretch>
@@ -83,36 +55,54 @@
          </font>
         </property>
         <property name="text">
-         <string>Clients</string>
+         <string>Edit</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="delete_button">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>10</pointsize>
+         </font>
+        </property>
+        <property name="text">
+         <string>Delete</string>
         </property>
        </widget>
       </item>
      </layout>
     </item>
     <item>
-     <layout class="QHBoxLayout" name="horizontalLayout_3">
-      <property name="topMargin">
-       <number>25</number>
-      </property>
-      <property name="bottomMargin">
-       <number>25</number>
-      </property>
+     <layout class="QHBoxLayout" name="horizontalLayout">
       <item>
-       <widget class="QPushButton" name="animals_button">
+       <widget class="QTableWidget" name="tableWidget">
         <property name="sizePolicy">
-         <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
+         <sizepolicy hsizetype="MinimumExpanding" vsizetype="Expanding">
           <horstretch>0</horstretch>
           <verstretch>0</verstretch>
          </sizepolicy>
         </property>
-        <property name="font">
-         <font>
-          <pointsize>10</pointsize>
-         </font>
+        <property name="selectionBehavior">
+         <enum>QAbstractItemView::SelectRows</enum>
         </property>
-        <property name="text">
-         <string>Animals</string>
+        <property name="columnCount">
+         <number>2</number>
         </property>
+        <attribute name="horizontalHeaderDefaultSectionSize">
+         <number>260</number>
+        </attribute>
+        <attribute name="horizontalHeaderMinimumSectionSize">
+         <number>70</number>
+        </attribute>
+        <column/>
+        <column/>
        </widget>
       </item>
      </layout>

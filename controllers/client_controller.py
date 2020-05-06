@@ -1,14 +1,14 @@
-from views.human import *
+from views.client import *
 from pony.orm import *
-from models.human import Human
+from models.client import Client
 
 
-class HumanController(QtWidgets.QDialog):
+class ClientController(QtWidgets.QDialog):
     def __init__(self, parent, identifier=None):
-        super(HumanController, self).__init__(parent)
-        self.ui = Ui_human()
+        super(ClientController, self).__init__(parent)
+        self.ui = Ui_client()
         self.ui.setupUi(self)
-        self.setWindowTitle("Human")
+        self.setWindowTitle("Client")
 
         if identifier is not None:
             self.identifier = identifier
@@ -21,15 +21,15 @@ class HumanController(QtWidgets.QDialog):
 
     @db_session
     def init(self):
-        human = Human[self.identifier]
-        self.ui.name_edit.setText(human.name)
+        client = Client[self.identifier]
+        self.ui.name_edit.setText(client.name)
 
     @db_session
     def ok(self):
         if self.is_new:
-            Human(name=self.ui.name_edit.text())
+            Client(name=self.ui.name_edit.text())
         else:
-            human = Human[self.identifier]
-            human.name = self.ui.name_edit.text()
+            client = Client[self.identifier]
+            client.name = self.ui.name_edit.text()
 
         self.close()

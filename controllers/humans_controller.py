@@ -2,7 +2,7 @@ from PyQt5.QtWidgets import QMessageBox
 
 from views.humans import *
 from pony.orm import *
-from models import Human
+from models.human import Human
 from controllers.human_controller import HumanController
 
 
@@ -36,7 +36,7 @@ class HumansController(QtWidgets.QMainWindow):
     @db_session
     def new_human(self):
         human = HumanController(self)
-        result = human.exec_()
+        human.exec_()
 
         self.get_humans()
 
@@ -54,7 +54,7 @@ class HumansController(QtWidgets.QMainWindow):
         else:
             elem = selection[0]
             human = HumanController(self, int(self.ui.tableWidget.item(elem.row(), 0).text()))
-            result = human.exec_()
+            human.exec_()
 
             self.get_humans()
 

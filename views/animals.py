@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'C:\Users\nocrater\PycharmProjects\Shelter\uis\humans.ui'
+# Form implementation generated from reading ui file 'C:\Users\nocrater\PycharmProjects\Shelter\uis\animals.ui'
 #
 # Created by: PyQt5 UI code generator 5.14.2
 #
@@ -10,11 +10,11 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
 
 
-class Ui_humans(object):
-    def setupUi(self, humans):
-        humans.setObjectName("humans")
-        humans.resize(556, 709)
-        self.centralwidget = QtWidgets.QWidget(humans)
+class Ui_animals(object):
+    def setupUi(self, animals):
+        animals.setObjectName("animals")
+        animals.resize(1608, 764)
+        self.centralwidget = QtWidgets.QWidget(animals)
         self.centralwidget.setObjectName("centralwidget")
         self.verticalLayout = QtWidgets.QVBoxLayout(self.centralwidget)
         self.verticalLayout.setObjectName("verticalLayout")
@@ -64,21 +64,21 @@ class Ui_humans(object):
         sizePolicy.setHeightForWidth(self.tableWidget.sizePolicy().hasHeightForWidth())
         self.tableWidget.setSizePolicy(sizePolicy)
         self.tableWidget.setSelectionBehavior(QtWidgets.QAbstractItemView.SelectRows)
-        self.tableWidget.setColumnCount(2)
+        self.tableWidget.setColumnCount(6)
         self.tableWidget.setObjectName("tableWidget")
         self.tableWidget.setRowCount(0)
         self.tableWidget.horizontalHeader().setDefaultSectionSize(260)
         self.tableWidget.horizontalHeader().setMinimumSectionSize(70)
         self.horizontalLayout.addWidget(self.tableWidget)
         self.verticalLayout.addLayout(self.horizontalLayout)
-        humans.setCentralWidget(self.centralwidget)
+        animals.setCentralWidget(self.centralwidget)
 
-        self.retranslateUi(humans)
-        QtCore.QMetaObject.connectSlotsByName(humans)
+        self.retranslateUi(animals)
+        QtCore.QMetaObject.connectSlotsByName(animals)
 
-    def retranslateUi(self, humans):
+    def retranslateUi(self, animals):
         _translate = QtCore.QCoreApplication.translate
-        humans.setWindowTitle(_translate("humans", "MainWindow"))
-        self.new_button.setText(_translate("humans", "New"))
-        self.edit_button.setText(_translate("humans", "Edit"))
-        self.delete_button.setText(_translate("humans", "Delete"))
+        animals.setWindowTitle(_translate("animals", "MainWindow"))
+        self.new_button.setText(_translate("animals", "New"))
+        self.edit_button.setText(_translate("animals", "Edit"))
+        self.delete_button.setText(_translate("animals", "Delete"))

@@ -1,2 +1,2 @@
 from .base import db
-from .Human import Human
+from .human import Human

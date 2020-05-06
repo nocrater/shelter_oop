@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'C:\Users\nocrater\PycharmProjects\Shelter\uis\humans.ui'
+# Form implementation generated from reading ui file 'C:\Users\nocrater\PycharmProjects\Shelter\uis\clients.ui'
 #
 # Created by: PyQt5 UI code generator 5.14.2
 #
@@ -10,11 +10,11 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
 
 
-class Ui_humans(object):
-    def setupUi(self, humans):
-        humans.setObjectName("humans")
-        humans.resize(556, 709)
-        self.centralwidget = QtWidgets.QWidget(humans)
+class Ui_clients(object):
+    def setupUi(self, clients):
+        clients.setObjectName("clients")
+        clients.resize(800, 709)
+        self.centralwidget = QtWidgets.QWidget(clients)
         self.centralwidget.setObjectName("centralwidget")
         self.verticalLayout = QtWidgets.QVBoxLayout(self.centralwidget)
         self.verticalLayout.setObjectName("verticalLayout")
@@ -71,14 +71,14 @@ class Ui_humans(object):
         self.tableWidget.horizontalHeader().setMinimumSectionSize(70)
         self.horizontalLayout.addWidget(self.tableWidget)
         self.verticalLayout.addLayout(self.horizontalLayout)
-        humans.setCentralWidget(self.centralwidget)
+        clients.setCentralWidget(self.centralwidget)
 
-        self.retranslateUi(humans)
-        QtCore.QMetaObject.connectSlotsByName(humans)
+        self.retranslateUi(clients)
+        QtCore.QMetaObject.connectSlotsByName(clients)
 
-    def retranslateUi(self, humans):
+    def retranslateUi(self, clients):
         _translate = QtCore.QCoreApplication.translate
-        humans.setWindowTitle(_translate("humans", "MainWindow"))
-        self.new_button.setText(_translate("humans", "New"))
-        self.edit_button.setText(_translate("humans", "Edit"))
-        self.delete_button.setText(_translate("humans", "Delete"))
+        clients.setWindowTitle(_translate("clients", "MainWindow"))
+        self.new_button.setText(_translate("clients", "New"))
+        self.edit_button.setText(_translate("clients", "Edit"))
+        self.delete_button.setText(_translate("clients", "Delete"))
