@@ -8,7 +8,7 @@ from enums.where_now import WhereNow
 
 class Animal(db.Entity):
     name = Required(str)
-    description = Required(LongUnicode)
+    description = Optional(LongUnicode)
 
     species = Required(Species)
     state = Required(State)

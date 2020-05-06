@@ -15,6 +15,7 @@ class AnimalsController(QtWidgets.QMainWindow):
         self.setWindowTitle("Animals")
 
         self.ui.tableWidget.setHorizontalHeaderLabels(["Id", "Name", "Description", "Species", "State", "Where now"])
+        self.ui.tableWidget.setColumnHidden(0, True)
 
         self.get_animals()
 

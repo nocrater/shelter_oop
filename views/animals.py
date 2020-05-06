@@ -13,7 +13,7 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_animals(object):
     def setupUi(self, animals):
         animals.setObjectName("animals")
-        animals.resize(1608, 764)
+        animals.resize(1325, 764)
         self.centralwidget = QtWidgets.QWidget(animals)
         self.centralwidget.setObjectName("centralwidget")
         self.verticalLayout = QtWidgets.QVBoxLayout(self.centralwidget)

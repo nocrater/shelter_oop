@@ -56,6 +56,15 @@ class AnimalController(QtWidgets.QDialog):
 
     @db_session
     def ok(self):
+        name = self.ui.name_edit.text().strip()
+
+        if name == "":
+            error_dialog = QtWidgets.QErrorMessage()
+            error_dialog.setWindowTitle("Error")
+            error_dialog.showMessage("Name should not be empty or contains only spaces")
+            error_dialog.exec_()
+            return
+
         species = None
         species_text = self.ui.species_combo_box.currentText()
         if species_text == "Cat":
@@ -89,14 +98,14 @@ class AnimalController(QtWidgets.QDialog):
             return
 
         if self.is_new:
-            animal = Animal(name=self.ui.name_edit.text(),
+            animal = Animal(name=name,
                             description=self.ui.description.toPlainText(),
                             species=species,
                             state=state,
                             where_now=where_now)
         else:
             animal = Animal[self.identifier]
-            animal.name = self.ui.name_edit.text()
+            animal.name = name
             animal.description = self.ui.description.toPlainText()
             animal.species = species
             animal.state = state

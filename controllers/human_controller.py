@@ -26,10 +26,19 @@ class HumanController(QtWidgets.QDialog):
 
     @db_session
     def ok(self):
+        name = self.ui.name_edit.text().strip()
+
+        if name == "":
+            error_dialog = QtWidgets.QErrorMessage()
+            error_dialog.setWindowTitle("Error")
+            error_dialog.showMessage("Name should not be empty or contains only spaces")
+            error_dialog.exec_()
+            return
+
         if self.is_new:
-            Human(name=self.ui.name_edit.text())
+            Human(name=name)
         else:
             human = Human[self.identifier]
-            human.name = self.ui.name_edit.text()
+            human.name = name
 
         self.close()

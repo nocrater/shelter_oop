@@ -1,8 +1,6 @@
 from views.main import *
 from views.humans import *
 
-import sys
-
 from enums.species import Species, SpeciesConverter
 from enums.state import State, StateConverter
 from enums.where_now import WhereNow, WhereNowConverter

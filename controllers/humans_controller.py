@@ -32,6 +32,7 @@ class HumansController(QtWidgets.QMainWindow):
 
             self.ui.tableWidget.setItem(number, 0, QtWidgets.QTableWidgetItem(str(human.id)))
             self.ui.tableWidget.setItem(number, 1, QtWidgets.QTableWidgetItem(human.name))
+            self.ui.tableWidget.setColumnHidden(0, True)
 
     @db_session
     def new_human(self):
