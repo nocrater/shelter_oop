@@ -7,8 +7,9 @@ from controllers.animal_controller import AnimalController
 
 
 class AnimalsController(QtWidgets.QMainWindow):
-    def __init__(self, parent):
+    def __init__(self, parent, selecting=None, animal_type=None):
         super(AnimalsController, self).__init__(parent)
+        self.parent = parent
         self.ui = Ui_animals()
         self.setWindowModality(QtCore.Qt.ApplicationModal)
         self.ui.setupUi(self)
@@ -22,6 +23,28 @@ class AnimalsController(QtWidgets.QMainWindow):
         self.ui.new_button.clicked.connect(self.new_animal)
         self.ui.edit_button.clicked.connect(self.edit_animal)
         self.ui.delete_button.clicked.connect(self.delete_animal)
+
+        if selecting and animal_type:
+            self.animal_type = animal_type
+
+            horizontalLayout = QtWidgets.QHBoxLayout()
+            horizontalLayout.setObjectName("horizontalLayout")
+
+            select_button = QtWidgets.QPushButton("Select")
+
+            sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Maximum, QtWidgets.QSizePolicy.Fixed)
+            sizePolicy.setHorizontalStretch(0)
+            sizePolicy.setVerticalStretch(0)
+            sizePolicy.setHeightForWidth(select_button.sizePolicy().hasHeightForWidth())
+
+            select_button.setSizePolicy(sizePolicy)
+            select_button.setMinimumSize(QtCore.QSize(100, 0))
+            select_button.setObjectName("ok_button")
+
+            horizontalLayout.addWidget(select_button)
+            self.ui.verticalLayout.addLayout(horizontalLayout)
+
+            select_button.clicked.connect(self.select)
 
     @db_session
     def get_animals(self):
@@ -74,3 +97,21 @@ class AnimalsController(QtWidgets.QMainWindow):
             delete(a for a in Animal if a.id in indices)
 
         self.get_animals()
+
+    def select(self):
+        selection = self.ui.tableWidget.selectionModel().selectedRows()
+
+        if len(selection) != 1:
+            msg = QMessageBox()
+
+            msg.setWindowTitle("Error")
+            msg.setText("Please select 1 row")
+            msg.setStandardButtons(QMessageBox.Ok)
+
+            msg.exec_()
+        else:
+            animal = selection[0]
+            animal_id = int(self.ui.tableWidget.item(animal.row(), 0).text())
+            animal_name = self.ui.tableWidget.item(animal.row(), 1).text()
+            self.parent.update_sets(animal_id, animal_name, self.animal_type)
+            self.close()

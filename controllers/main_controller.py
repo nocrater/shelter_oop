@@ -6,7 +6,7 @@ from enums.state import State, StateConverter
 from enums.where_now import WhereNow, WhereNowConverter
 
 from controllers.humans_controller import HumansController
-from controllers.client_controller import ClientController
+from controllers.clients_controller import ClientsController
 from controllers.animals_controller import AnimalsController
 
 from models import db
@@ -36,8 +36,8 @@ class MainController(QtWidgets.QMainWindow):
         humans.show()
 
     def open_clients(self):
-        client = ClientController(self)
-        client.show()
+        clients = ClientsController(self)
+        clients.show()
 
     def open_animals(self):
         animals = AnimalsController(self)

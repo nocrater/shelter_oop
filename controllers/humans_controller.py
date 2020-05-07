@@ -15,6 +15,7 @@ class HumansController(QtWidgets.QMainWindow):
         self.setWindowTitle("Humans")
 
         self.ui.tableWidget.setHorizontalHeaderLabels(["Id", "Name"])
+        self.ui.tableWidget.setColumnHidden(0, True)
 
         self.get_humans()
 
@@ -27,12 +28,12 @@ class HumansController(QtWidgets.QMainWindow):
         self.ui.tableWidget.setRowCount(0)
 
         humans = select(h for h in Human)
+
         for number, human in enumerate(humans):
             self.ui.tableWidget.insertRow(number)
 
             self.ui.tableWidget.setItem(number, 0, QtWidgets.QTableWidgetItem(str(human.id)))
             self.ui.tableWidget.setItem(number, 1, QtWidgets.QTableWidgetItem(human.name))
-            self.ui.tableWidget.setColumnHidden(0, True)
 
     @db_session
     def new_human(self):

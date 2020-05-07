@@ -13,7 +13,7 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_clients(object):
     def setupUi(self, clients):
         clients.setObjectName("clients")
-        clients.resize(800, 709)
+        clients.resize(405, 709)
         self.centralwidget = QtWidgets.QWidget(clients)
         self.centralwidget.setObjectName("centralwidget")
         self.verticalLayout = QtWidgets.QVBoxLayout(self.centralwidget)
@@ -67,7 +67,7 @@ class Ui_clients(object):
         self.tableWidget.setColumnCount(2)
         self.tableWidget.setObjectName("tableWidget")
         self.tableWidget.setRowCount(0)
-        self.tableWidget.horizontalHeader().setDefaultSectionSize(260)
+        self.tableWidget.horizontalHeader().setDefaultSectionSize(380)
         self.tableWidget.horizontalHeader().setMinimumSectionSize(70)
         self.horizontalLayout.addWidget(self.tableWidget)
         self.verticalLayout.addLayout(self.horizontalLayout)

@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1031</width>
+    <width>802</width>
     <height>773</height>
    </rect>
   </property>
@@ -106,7 +106,7 @@
           <number>0</number>
          </property>
          <item>
-          <widget class="QTableWidget" name="tableWidget_to_take_2">
+          <widget class="QTableWidget" name="tableWidget_to_give">
            <property name="sizePolicy">
             <sizepolicy hsizetype="MinimumExpanding" vsizetype="Expanding">
              <horstretch>0</horstretch>
@@ -120,7 +120,7 @@
             <number>2</number>
            </property>
            <attribute name="horizontalHeaderDefaultSectionSize">
-            <number>260</number>
+            <number>385</number>
            </attribute>
            <attribute name="horizontalHeaderMinimumSectionSize">
             <number>70</number>
@@ -201,7 +201,7 @@
             <number>2</number>
            </property>
            <attribute name="horizontalHeaderDefaultSectionSize">
-            <number>260</number>
+            <number>385</number>
            </attribute>
            <attribute name="horizontalHeaderMinimumSectionSize">
             <number>70</number>

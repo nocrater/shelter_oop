@@ -1,3 +1,5 @@
+from PyQt5.QtWidgets import QMessageBox
+
 from views.animal import *
 from pony.orm import *
 from models.animal import Animal
@@ -59,10 +61,13 @@ class AnimalController(QtWidgets.QDialog):
         name = self.ui.name_edit.text().strip()
 
         if name == "":
-            error_dialog = QtWidgets.QErrorMessage()
-            error_dialog.setWindowTitle("Error")
-            error_dialog.showMessage("Name should not be empty or contains only spaces")
-            error_dialog.exec_()
+            msg = QMessageBox()
+
+            msg.setWindowTitle("Error")
+            msg.setText("Name should not be empty or contains only spaces")
+            msg.setStandardButtons(QMessageBox.Ok)
+
+            msg.exec_()
             return
 
         species = None
@@ -91,10 +96,13 @@ class AnimalController(QtWidgets.QDialog):
             where_now = WhereNow.Clinic
 
         if (species is None) or (state is None) or (where_now is None):
-            error_dialog = QtWidgets.QErrorMessage()
-            error_dialog.setWindowTitle("Error")
-            error_dialog.showMessage('Combo box value is not found')
-            error_dialog.exec_()
+            msg = QMessageBox()
+
+            msg.setWindowTitle("Error")
+            msg.setText("Combo box value is not found")
+            msg.setStandardButtons(QMessageBox.Ok)
+
+            msg.exec_()
             return
 
         if self.is_new:

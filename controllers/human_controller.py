@@ -1,3 +1,5 @@
+from PyQt5.QtWidgets import QMessageBox
+
 from views.human import *
 from pony.orm import *
 from models.human import Human
@@ -29,10 +31,13 @@ class HumanController(QtWidgets.QDialog):
         name = self.ui.name_edit.text().strip()
 
         if name == "":
-            error_dialog = QtWidgets.QErrorMessage()
-            error_dialog.setWindowTitle("Error")
-            error_dialog.showMessage("Name should not be empty or contains only spaces")
-            error_dialog.exec_()
+            msg = QMessageBox()
+
+            msg.setWindowTitle("Error")
+            msg.setText("Name should not be empty or contains only spaces")
+            msg.setStandardButtons(QMessageBox.Ok)
+
+            msg.exec_()
             return
 
         if self.is_new:
